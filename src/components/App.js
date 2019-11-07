@@ -22,6 +22,8 @@ function App() {
 				<Link to="/">Home</Link>
 				
 				{/* We can conditionally show links if logged in or not */}
+
+				{/* #19 Add a SignIn Link to the Navigation */}
 				{!signedIn && <Link to="/signin">Sign In</Link>}
 				{signedIn && <Link to="/account">My Account</Link>}
 				{signedIn && <Link to="/logout">Logout</Link>}
