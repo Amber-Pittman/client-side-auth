@@ -16,7 +16,8 @@ function ProtectedRoute(props) {
 
 	const {  // #55 Destructure from props
 		component: Component,
-		...rest
+		...rest //this is the props object with the Component value that you extracted - 
+				// everything except for the Component value
 	} = props // essentially saying to take this props obj, remove the component value from
 				// it & assign it to the variable name of Component. And then everything else
 				// besides Component is stored in the variable called `rest` 
@@ -28,9 +29,10 @@ function ProtectedRoute(props) {
 		// #56 After destructuring from props, you can now spread the rest variable b/c we
 		//		don't want to put both component and render on the Route component. We only 
 		//		want to use 1 of them. 
-		//		If we did ...props instead, it would use both component and render. Not what we
-		//		want. 
-		//  #57 Don't forget to add the value of renderProps to render in the cb
+		//		If we did ...props instead, it would use both component and render. Not what 
+		//		we want. 
+		//  #57 Don't forget to add the value of renderProps to render in the cb 0 doesn't matter
+		//		what you name it. We just chose renderProps for ease of understanding
 		<Route {...rest} render={(renderProps) => {
 			// Use a render prop so our component is computed,
 			// allowing our token value to be set and deleted over time
@@ -42,7 +44,7 @@ function ProtectedRoute(props) {
 				// We are logged in, so render the component as normal
 				// Passing "renderProps" so "Component" has access to all
 				// the React Router stuff
-				return <Component {...renderProps} />
+				return <Component {...renderProps} />  // send all the props through
 			} else {
 				// We are not logged in, so redirect to the signin page
 				return <Redirect to="/signin" />

@@ -76,7 +76,7 @@ function Signin(props) {
 				// Token is a cryptographically defined string that says we are who we say 
 				//   we are. It uses a timestamp as part of the generation.
 
-				// Redirect the user to their account page after logging in
+				// #59 Redirect the user to their account page after logging in
 				props.history.push("/account")
 			})
 			.catch(err => {

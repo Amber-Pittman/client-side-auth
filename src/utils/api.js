@@ -3,7 +3,7 @@
 // #28 Import axios
 import axios from "axios"
 
-// A helper function so we don't have to keep repeating this
+// #60 A helper function so we don't have to keep repeating this
 export function getToken() {
 	return localStorage.getItem("token")
 }
@@ -23,6 +23,7 @@ export default function() {
 		// #31 Predefine some headers to this axios instance
 		headers: {
 			// custom header
+			// #61 Just call getToken for Authorization
 			Authorization: getToken(),
 		},
 	})
