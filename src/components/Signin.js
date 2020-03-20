@@ -1,5 +1,3 @@
-// #6 Create Signin Component
-
 // #11 Import useState
 import React, { useState } from "react"
 
@@ -8,6 +6,7 @@ import api from "../utils/api";
 // // #24 Import axios
 // import axios from "axios";
 
+// #6 Create Signin Component
 function Signin(props) {
 	// #20 Set up error state for error component/message
 	//    It does not need preventDefault either
@@ -65,7 +64,7 @@ function Signin(props) {
 		// 	})
 		
 
-		//  #33 Instead of calling axios post, we'll use api as a function
+		//  #23B Instead of calling axios post, we'll use api as a function
 		//    in place of axios
 		api()
 			// Since base url is already set in api.js, just need "signin"
